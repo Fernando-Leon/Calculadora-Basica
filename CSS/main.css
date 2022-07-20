@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    height: 100vh;
+}
+
+#content-main {
+    display: grid;
+    background-color: #ccc;  
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 10% 90%;
+    width: 60vw;
+    height: 60vh;
+}
+
+#contnet-display {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    background-color: #aaa;
+}
+
+#contnet-display div{
+    width: 90%;
+    height: 70%;
+    margin: auto;
+    font-size: 30px;
+    text-align: end;
+}
+
+#const-second {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    margin: 10px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-gap: 10px;
+}
+
+#const-second .haver-classname {
+    display: grid;
+    background-color: #aaa;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    transition: 0.1s;
+}
+
+#const-second .haver-classname:hover {
+    background-color: rgb(255, 166, 0);
+}
+
+#const-second div div{
+    font-size: 20px;
+}
+
+#button-result {
+    background-color: rgb(255, 166, 0) !important;
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 6;
+}
+
+#button-result:hover {
+    background-color: #aaa !important;
+}
