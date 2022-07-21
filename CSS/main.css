@@ -17,6 +17,7 @@ body {
     grid-template-rows: 10% 90%;
     width: 60vw;
     height: 60vh;
+    border-radius: 5px;
 }
 
 #contnet-display {
@@ -26,14 +27,17 @@ body {
     height: 100%;
     display: grid;
     background-color: #aaa;
+    border-radius: 5px;
 }
 
 #contnet-display div{
+    background-color:#ccc;
     width: 90%;
-    height: 70%;
     margin: auto;
-    font-size: 30px;
+    font-size: 35px;
     text-align: end;
+    border-radius: 5px;
+    padding-right: 5px;
 }
 
 #const-second {
