@@ -14,7 +14,7 @@ body {
     display: grid;
     background-color: #ccc;  
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 10% 90%;
+    grid-template-rows: 20% 80%;
     width: 60vw;
     height: 60vh;
     border-radius: 5px;
@@ -38,6 +38,13 @@ body {
     text-align: end;
     border-radius: 5px;
     padding-right: 5px;
+    overflow-x: scroll;
+    user-select: none;
+}
+
+#contnet-display div:hover {
+    background-color: rgba(204, 204, 204, 0.9);
+    border: solid 1px #000;
 }
 
 #const-second {

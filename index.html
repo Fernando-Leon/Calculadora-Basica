@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CALCULADORA</title>
     <link rel="stylesheet" href="CSS/main.css" type="text/css">
+    <link rel="shourtcut icon" href="ICON/icon.png">
 </head>
 <body>
     <div id="content-main">
@@ -15,24 +16,26 @@
         </div>
 
         <div id="const-second">
-                <div class="haver-classname" id="button-suma"><div> + </div></div>
-                <div class="haver-classname" id="button-resta"><div> - </div></div>
-                <div class="haver-classname" id="button-multiplicacion"><div> x </div></div>
-                <div class="haver-classname" id="button-division"><div> / </div></div>
-                <div class="haver-classname" id="button-7"><div>7</div></div>
-                <div class="haver-classname" id="button-8"><div>8</div></div>
-                <div class="haver-classname" id="button-9"><div>9</div></div>
-                <div class="haver-classname" id="button-4"><div>4</div></div>
-                <div class="haver-classname" id="button-5"><div>5</div></div>
-                <div class="haver-classname" id="button-6"><div>6</div></div>
-                <div class="haver-classname" id="button-1"><div>1</div></div>
-                <div class="haver-classname" id="button-2"><div>2</div></div>
-                <div class="haver-classname" id="button-3"><div>3</div></div>
-                <div class="haver-classname" id="button-0"><div>0</div></div>
-                <div class="haver-classname" id="button-punto"><div> . </div></div>
-                <div class="haver-classname" id="button-delete"><div>C</div></div>
-                <div class="haver-classname" id="button-result"><div> = </div></div>
+                <div class="haver-classname" onclick="btnSuma();" id="button-suma"><div> + </div></div>
+                <div class="haver-classname" onclick="btnResta();" id="button-resta"><div> - </div></div>
+                <div class="haver-classname" onclick="btnMultiplicacion();" id="button-multiplicacion"><div> x </div></div>
+                <div class="haver-classname" onclick="btnDivicion();" id="button-division"><div> / </div></div>
+                <div class="haver-classname" onclick="btnNum7()" id="button-7"><div>7</div></div>
+                <div class="haver-classname" onclick="btnNum8();" id="button-8"><div>8</div></div>
+                <div class="haver-classname" onclick="btnNum9();" id="button-9"><div>9</div></div>
+                <div class="haver-classname" onclick="btnNum4();" id="button-4"><div>4</div></div>
+                <div class="haver-classname" onclick="btnNum5();" id="button-5"><div>5</div></div>
+                <div class="haver-classname" onclick="btnNum6();" id="button-6"><div>6</div></div>
+                <div class="haver-classname" onclick="btnNum1();" id="button-1"><div>1</div></div>
+                <div class="haver-classname" onclick="btnNum2();" id="button-2"><div>2</div></div>
+                <div class="haver-classname" onclick="btnNum3();" id="button-3"><div>3</div></div>
+                <div class="haver-classname" onclick="btnNum0();" id="button-0"><div>0</div></div>
+                <div class="haver-classname" onclick="btnPunto();" id="button-punto"><div> . </div></div>
+                <div class="haver-classname" onclick="btnDelete();" id="button-delete"><div>C</div></div>
+                <div class="haver-classname" onclick="btnResult();" id="button-result"><div> = </div></div>
         </div>
     </div>
+
+    <script type="text/javascript" src="JS/main.js"></script>
 </body>
 </html>
