@@ -1,12 +1,12 @@
 //Pantalla donde se visualizaran los resultados
-const displayView = document.getElementById("display-view")
+const displayView = document.getElementById("display-view");
 let exprecionArray = [];
 
 //Botones
-const btnSuma = ()=> { if(condicionSignos() === true){ displayView.innerHTML += "+"; exprecionArray.push("+");}}
-const btnResta = ()=> { if(condicionSignos() === true){ displayView.innerHTML += "-"; exprecionArray.push("-");}}
-const btnMultiplicacion = ()=> { if(condicionSignos() === true){ displayView.innerHTML += "*"; exprecionArray.push("*");}}
-const btnDivicion = ()=> { if(condicionSignos() === true){ displayView.innerHTML += "/"; exprecionArray.push("/");}}
+const btnSuma = ()=> { if(condicionSignos() === false){ displayView.innerHTML += "+"; exprecionArray.push("+");}}
+const btnResta = ()=> { if(condicionSignos() === false){ displayView.innerHTML += "-"; exprecionArray.push("-");}}
+const btnMultiplicacion = ()=> { if(condicionSignos() === false){ displayView.innerHTML += "x"; exprecionArray.push("*");}}
+const btnDivicion = ()=> { if(condicionSignos() === false){ displayView.innerHTML += "/"; exprecionArray.push("/");}}
 const btnNum0 = ()=> { displayView.innerHTML += "0"; exprecionArray.push("0")}
 const btnNum1 = ()=> { displayView.innerHTML += "1"; exprecionArray.push("1")}
 const btnNum2 = ()=> { displayView.innerHTML += "2"; exprecionArray.push("2")}
@@ -17,12 +17,11 @@ const btnNum6 = ()=> { displayView.innerHTML += "6"; exprecionArray.push("6")}
 const btnNum7 = ()=> { displayView.innerHTML += "7"; exprecionArray.push("7")}
 const btnNum8 = ()=> { displayView.innerHTML += "8"; exprecionArray.push("8")}
 const btnNum9 = ()=> { displayView.innerHTML += "9"; exprecionArray.push("9")}
-const btnPunto = ()=> { if(condicionSignos() === true) {displayView.innerHTML += "."; exprecionArray.push(".");}}
+const btnPunto = ()=> { if(condicionSignos() === false) {displayView.innerHTML += "."; exprecionArray.push(".");}}
 const btnDelete = ()=> { displayView.innerHTML = ""; exprecionArray = [];}
 
 function btnResult(){
     let expresion = arrStructure();
-    console.log(`Arreglo inicial: ${expresion}`)
     for(let i = 0; i < expresion.length; i++){
         if(expresion[i] === "*" || expresion[i] === "/") {
             let vals = [];
@@ -45,6 +44,7 @@ function btnResult(){
        }
     }
     displayView.innerHTML = expresion[0];
+    if(displayView.textContent === "NaN") { displayView.innerHTML = "Error de sistaxis"; }
 }
 
 function operation(values) {
@@ -56,7 +56,8 @@ function operation(values) {
 
 function arrStructure(){
     var newArray = [];
-    var cifra = ""
+    var cifra = "";
+    if(exprecionArray.includes("Error de sistaxis")){exprecionArray.replace("Error de sistaxis", "");}
     for(let i = 0; i < exprecionArray.length; i++){
         let item = exprecionArray[i+1];
         let number = String(exprecionArray[i])
@@ -67,7 +68,6 @@ function arrStructure(){
                 cifra = "";
             }
         }
-
         if(exprecionArray[i] === "+" || exprecionArray[i] === "-" || exprecionArray[i] === "*" || exprecionArray[i] === "/"){newArray.push(exprecionArray[i]);}
         if(i === exprecionArray.length-1 && cifra !== ""){newArray.push(cifra);}
     }
@@ -77,5 +77,5 @@ function arrStructure(){
 //conditions
 const condicionSignos = ()=>{
     let endItem = exprecionArray[exprecionArray.length-1];
-    return (endItem === "+" || endItem === "-" || endItem === "*" ||endItem === "/" || endItem === ".") ? true : false;
+    return (endItem === "+" || endItem === "-" || endItem === "*" ||endItem === "/" || endItem === "." || exprecionArray.length === 0) ? true : false;
 }
